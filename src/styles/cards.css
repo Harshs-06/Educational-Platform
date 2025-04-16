@@ -1,0 +1,92 @@
+
+/* Field Cards */
+.field-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.field-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-card:hover {
+  background-color: var(--card-hover);
+  transform: translateY(-4px);
+}
+
+.field-card.selected {
+  border-color: var(--accent-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--accent-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.field-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.field-card p {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Subfields Container */
+.subfields-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.subfield-item {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.subfield-item:hover {
+  background-color: var(--card-hover);
+}
+
+.subfield-item.selected {
+  border-color: var(--accent-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.subfield-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subfield-item p {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin: 0;
+}

@@ -1,0 +1,62 @@
+
+/* Progress Bar */
+.progress-container {
+  margin: 2rem 0;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: var(--bg-tertiary);
+  z-index: 0;
+}
+
+.progress {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  transition: width 0.3s ease;
+  z-index: 1;
+  width: 0%;
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-tertiary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.progress-step.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.progress-step.completed {
+  background-color: var(--success);
+  color: white;
+}

@@ -1,0 +1,29 @@
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .field-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .subfields-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-buttons {
+    flex-direction: column-reverse;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 0 2rem;
+  }
+  
+  .form-container, .roadmap-container {
+    padding: 3rem;
+  }
+}

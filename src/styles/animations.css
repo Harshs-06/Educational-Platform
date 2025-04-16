@@ -1,0 +1,32 @@
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Background Animation */
+.background-circle {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at top right, 
+    rgba(59, 130, 246, 0.3),  /* Soft blue with transparency */
+    rgba(147, 51, 234, 0.2)   /* Soft purple with transparency */
+  );
+  opacity: 0.6;
+  filter: blur(120px);
+  z-index: -1;
+  animation: circle-move 20s infinite alternate;
+}
+
+@keyframes circle-move {
+  0% {
+    transform: translate(-25%, -25%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-20%, -30%) rotate(360deg);
+  }
+}
