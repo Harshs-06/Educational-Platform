@@ -1,26 +1,188 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stellar-student-compass</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Compass - Find Your Path</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <div class="app-container">
+    <div class="form-container">
+      <header>
+        <div class="logo">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <h1>Educational Compass</h1>
+        </div>
+        <p class="subtitle">Discover your perfect learning path</p>
+      </header>
 
-    <meta property="og:title" content="stellar-student-compass" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+          <div class="progress-step active" data-step="1">1</div>
+          <div class="progress-step" data-step="2">2</div>
+          <div class="progress-step" data-step="3">3</div>
+        </div>
+      </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+      <form id="student-form">
+        <!-- Step 1: Basic Information -->
+        <div class="form-step active" id="step-1">
+          <h2>Tell us about yourself</h2>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="education">Current Education Level</label>
+            <select id="education" name="education" required>
+              <option value="" disabled selected>Select your education level</option>
+              <option value="high-school">High School</option>
+              <option value="undergraduate">Undergraduate</option>
+              <option value="graduate">Graduate</option>
+              <option value="professional">Professional</option>
+            </select>
+          </div>
+          <div class="form-buttons">
+            <button type="button" class="btn btn-next">Continue</button>
+          </div>
+        </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Step 2: Field Selection -->
+        <div class="form-step" id="step-2">
+          <h2>What would you like to study?</h2>
+          <p class="form-description">Select a field that interests you the most</p>
+          
+          <div class="field-cards">
+            <div class="field-card" data-field="computer-science">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Computer Science</h3>
+              <p>Programming, AI, Data Science, Cybersecurity</p>
+            </div>
+            
+            <div class="field-card" data-field="business">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h3>Business</h3>
+              <p>Management, Marketing, Finance, Entrepreneurship</p>
+            </div>
+            
+            <div class="field-card" data-field="engineering">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3>Engineering</h3>
+              <p>Mechanical, Electrical, Civil, Chemical</p>
+            </div>
+            
+            <div class="field-card" data-field="design">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
+              </div>
+              <h3>Design</h3>
+              <p>UI/UX, Graphic Design, Animation, Architecture</p>
+            </div>
+            
+            <div class="field-card" data-field="medicine">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <h3>Medicine</h3>
+              <p>Medical Science, Nursing, Pharmacy, Dentistry</p>
+            </div>
+            
+            <div class="field-card" data-field="arts">
+              <div class="field-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <h3>Arts & Humanities</h3>
+              <p>Literature, History, Philosophy, Languages</p>
+            </div>
+          </div>
+          
+          <div class="form-buttons">
+            <button type="button" class="btn btn-prev">Back</button>
+            <button type="button" class="btn btn-next" id="field-next" disabled>Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Subfield Selection -->
+        <div class="form-step" id="step-3">
+          <h2>Explore Subfields</h2>
+          <p class="form-description">Select a specialization in <span id="selected-field-name">your field</span></p>
+          
+          <div class="subfields-container" id="subfields-container">
+            <!-- Subfields will be populated dynamically -->
+          </div>
+          
+          <div class="form-buttons">
+            <button type="button" class="btn btn-prev">Back</button>
+            <button type="button" class="btn btn-submit" id="show-roadmap">Show My Roadmap</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="roadmap-container" id="roadmap-container">
+      <div class="roadmap-header">
+        <h2>Your Learning Roadmap</h2>
+        <p id="roadmap-description">Here's your personalized path to mastery</p>
+      </div>
+      
+      <div class="roadmap-content" id="roadmap-content">
+        <!-- Roadmap will be populated dynamically -->
+      </div>
+      
+      <div class="roadmap-actions">
+        <button class="btn btn-primary" id="download-roadmap">Download PDF</button>
+        <button class="btn" id="reset-form">Start Over</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>© 2025 Educational Compass. Find your perfect learning path.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
